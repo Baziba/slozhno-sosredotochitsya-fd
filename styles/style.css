@@ -116,8 +116,8 @@ body {
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: none;
   border-block-end: 1px solid var(--section-title-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
@@ -243,8 +243,8 @@ body {
   }
 
   .header__title {
-    margin-inline-start: -20px;
     grid-column: span 2;
+    margin-inline-start: -20px;
   }
 
   .hero-text {
