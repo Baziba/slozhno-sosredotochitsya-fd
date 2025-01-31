@@ -95,10 +95,11 @@ body {
 
 .header__theme-menu-button {
   border: 1px solid transparent;
-  padding: 0 13px;
+  padding: 0 13px 2px;
   color: var(--section-title-color);
   text-transform: lowercase;
   background: none;
+  cursor: pointer;
 }
 
 /* Как добавить альфа канал к hex без дополнительной переменной --hover-color-alpha? */
