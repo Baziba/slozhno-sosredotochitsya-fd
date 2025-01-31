@@ -83,7 +83,7 @@ body {
 }
 
 .title-decor {
-  color: var(--title-decor-color);
+  color: var(--header-text-color);
   background-color: var(--accent-color);
 }
 
