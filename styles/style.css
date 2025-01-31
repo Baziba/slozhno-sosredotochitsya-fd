@@ -1,5 +1,348 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background: var(--default-backgound-image) no-repeat center / cover;
+  background-attachment: fixed;
+  background-clip: border-box;
+}
+
+body {
+  font-family: var(--default-font-family, "sans-serif");
+  font-size: var(--default-font-size, 18px);
+  line-height: var(--default-line-height, 1.3em);
+  background-color: var(--background-color, #000028);
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.text-link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.text-link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  padding: var(--padding-inline-sm);
+  min-block-size: var(--block-size-sm);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.decorated-zone::before {
+  top: var(--padding-inline-sm);
+  right: var(--padding-inline-sm);
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  bottom: var(--padding-inline-sm);
+  left: var(--padding-inline-sm);
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+.header__record {
+  position: absolute;
+  top: var(--padding-inline-sm);
+  right: 38px;
+}
+
+.header__record::before {
+  content: "REC";
+  color: var(--accent-color);
+}
+
+.header__record::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -19px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.title-decor {
+  color: var(--title-decor-color);
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 0 13px;
+  color: var(--section-title-color);
+  text-transform: lowercase;
+  background: none;
+}
+
+/* Как добавить альфа канал к hex без дополнительной переменной --hover-color-alpha? */
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-color-alpha);
+}
+
+@supports (
+  border: 1px solid color(from var(--section-title-color) xyz x y z / 0.4)
+) {
+  .header__theme-menu-button:hover {
+    border: 1px solid color(from var(--section-title-color) xyz x y z / 0.4);
+  }
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--section-title-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--section-title-color);
+}
+
+.content {
+  display: grid;
+  gap: 50px;
+  padding: var(--padding-block-sm) var(--padding-inline-sm);
+}
+
+.hero-text {
+  color: var(--hero-color);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--hero-font-size-sm);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  color: var(--header-text-color);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--accent-color);
+}
+
+.section__title {
+  padding-block-end: 20px;
+  color: var(--section-title-color);
+
+  font-weight: var(--font-weight-bold);
+  font-size: inherit;
+}
+
+.section_gallery .section__subtitle {
+  margin-block-end: 10px;
+}
+
+.section__subtitle {
+  margin-block-end: 20px;
+  font-size: inherit;
+}
+
+.section__subheader {
+  color: var(--header-text-color);
+  font-weight: var(--font-weight-regular);
+  background: var(--accent-color);
+}
+
+.section__text {
+  padding: 10px 0 20px;
+  color: var(--text-color);
+  line-height: 1.3em;
+}
+
+.section__articles_item:last-of-type > p {
+  padding-block-end: 0;
+}
+
+.section__images {
+  display: grid;
+  gap: 10px;
+}
+
+.section__images_item {
+  display: block;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.article__header {
+  font-weight: var(--font-weight-regular);
+  font-size: inherit;
+}
+
+.article__title {
+  color: var(--header-text-color);
+  font-size: inherit;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-block-size: var(--block-size-sm);
+}
+
+@media (width >= 768px) {
+  .decorated-zone {
+    padding: var(--padding-inline-lg);
+  }
+
+  .decorated-zone::before {
+    top: var(--padding-inline-lg);
+    right: var(--padding-inline-lg);
+  }
+
+  .decorated-zone::after {
+    bottom: var(--padding-inline-lg);
+    left: var(--padding-inline-lg);
+  }
+
+  .content {
+    gap: 80px;
+    padding-inline: var(--padding-inline-lg);
+    padding-block: var(--padding-block-lg);
+  }
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+    min-block-size: var(--block-size-lg);
+  }
+
+  .header__record {
+    top: 19px;
+    right: 48px;
+  }
+
+  .header__theme-menu {
+    grid-column: 2;
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+    grid-column: span 2;
+  }
+
+  .hero-text {
+    font-size: var(--hero-font-size-lg);
+  }
+
+  .header__text {
+    grid-column: 2;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section__title {
+    padding-block-end: 0;
+  }
+
+  .section_what .section__articles {
+    grid-column: span 2;
+  }
+
+  .section_gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .section_gallery .section__subtitle {
+    margin-block-end: 0;
+  }
+
+  .section__images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section__images_item:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .section__images_item:nth-child(2) {
+    grid-row: span 2;
+  }
+
+  .section__images_item:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .section__images_item:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .footer {
+    min-block-size: var(--block-size-lg);
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: var(--block-size-md);
+  }
+
+  .header__theme-menu {
+    grid-column: span 2;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section_why .section__articles,
+  .section_how .section__articles {
+    grid-column: span 2;
+  }
+
+  .section_what .section__articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: span 3;
+    gap: 20px;
+  }
+
+  .section_gallery .section__subtitle {
+    grid-column: span 3;
+  }
+
+  .section_gallery .section__images {
+    grid-column: span 3;
+  }
+
+  .footer {
+    min-block-size: var(--block-size-md);
+  }
 }
