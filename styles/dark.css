@@ -1,5 +1,5 @@
 :root.theme-dark {
-  --default-backgound-image: url(/images/cover-image-dark.png);
+  --default-backgound-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
   --text-color: #f1b2ce;
   --header-text-color: var(--background-color);

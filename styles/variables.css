@@ -6,7 +6,7 @@
   --font-weight-regular: 400;
   --hero-font-size-sm: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --hero-font-size-lg: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --default-backgound-image: url(/images/cover-image-dark.png);
+  --default-backgound-image: url(../images/cover-image-dark.png);
   --block-size-sm: 668px;
   --block-size-md: 768px;
   --block-size-lg: 1024px;

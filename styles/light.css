@@ -1,5 +1,5 @@
 :root.theme-light {
-  --default-backgound-image: url(/images/cover-image-light.png);
+  --default-backgound-image: url(../images/cover-image-light.png);
   --background-color: #fff1f7;
   --text-color: #353430;
   --header-text-color: var(--text-color);
@@ -15,7 +15,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --default-backgound-image: url(/images/cover-image-light.png);
+    --default-backgound-image: url(../images/cover-image-light.png);
     --background-color: #fff1f7;
     --text-color: #353430;
     --header-text-color: var(--text-color);
