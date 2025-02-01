@@ -52,15 +52,15 @@ body {
 .decorated-zone::before {
   top: var(--padding-inline-sm);
   right: var(--padding-inline-sm);
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--section-title-color);
+  border-right: 1px solid var(--section-title-color);
 }
 
 .decorated-zone::after {
   bottom: var(--padding-inline-sm);
   left: var(--padding-inline-sm);
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--section-title-color);
+  border-left: 1px solid var(--section-title-color);
 }
 
 .header__record {
